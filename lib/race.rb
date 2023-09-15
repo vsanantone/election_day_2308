@@ -6,9 +6,10 @@ class Race
     @candidates = []
   end
 
-  def register_candidate!(data)
-    @candidates << candidate1 = Candidate.new(data)
-    candidate1
+  def register_candidate!(hash)
+    candidate = Candidate.new(hash)
+    @candidates << candidate
+    candidate
   end
 
 end

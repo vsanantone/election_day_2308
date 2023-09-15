@@ -16,13 +16,13 @@ RSpec.describe Race do
   end
 
   it "registers a candidate and returns a candidate object" do
-    candidate1 = @race.register_candidate!({name: "Diana D", party: :democrat})
-    candidate2 = @race.register_candidate!({name: "Roberto R", party: :republican})
-    expect(candidate1).to be_a(Candidate)
-    expect(candidate1.class).to eq(Candidate)
-    expect(candidate1.name).to eq("Diana D")
-    expect(candidate1.party).to eq(:democrat)
-    expect(@race.candidates).to eq([candidate1, candidate2])
+    candidatea = @race.register_candidate!({name: "Diana D", party: :democrat})
+    candidateb = @race.register_candidate!({name: "Roberto R", party: :republican})
+    expect(candidatea).to be_a(Candidate)
+    expect(candidatea.class).to eq(Candidate)
+    expect(candidatea.name).to eq("Diana D")
+    expect(candidatea.party).to eq(:democrat)
+    expect(@race.candidates).to eq([candidatea, candidateb])
   end 
-  
+
 end

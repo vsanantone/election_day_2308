@@ -11,17 +11,28 @@ class Election
   end
 
   def candidates
-    candies = []
-    @race.candidates.each do |candidate|
-      candies << candidate
+    candidates = []
+    @races.each do |race|
+      candidates << race.candidates
     end
-    candies
+     candidates.flatten  
   end
-
+  
   def vote_counts
     candidate_voting_record = Hash.new(0)
-    
-    candidate_voting_record
+    candidates.map do |candidate|
+      candidate_voting_record[candidate.name] = candidate.votes
+    end
+  candidate_voting_record
   end
 
+end
+
+
+
+
+def candidates
+  all_candidates = @races.flat_map do |race|
+    race.candidates
+  end
 end
